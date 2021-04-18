@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.ifinal.project.parent</groupId>
+    <artifactId>final-projects-parent</artifactId>
+    <version>1.1.4-SNAPSHOT</version>
+    <name>final-projects-parent</name>
+    <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring.boot.version>2.4.5</spring.boot.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>oss</id>
+                    <name>oss-releases</name>
+                    <url>https://oss.sonatype.org/content/repositories/releases/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>oss-snapshots</id>
+                    <name>oss-snapshots</name>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+        <profile>
+            <id>deploy</id>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <phase>verify</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>dmall</id>
+            <distributionManagement>
+                <repository>
+                    <id>dmall.com</id>
+                    <url>http://nexus.dmall.com:8081/nexus/content/repositories/3rd</url>
+                </repository>
+                <snapshotRepository>
+                    <id>dmall.com</id>
+                    <url>http://nexus.dmall.com:8081/nexus/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+    <url>https://github.com/final-projects/final-projects-parent</url>
+
+    <scm>
+        <connection>scm:git:git://github.com/final-projects/final-projects-parent.git</connection>
+        <developerConnection>scm:git:ssh://github.com:final-projects/final-projects-parent.git</developerConnection>
+        <url>http://github.com/final-projects/final-projects-parent/tree/main</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <email>569553290@qq.com</email>
+            <id>likly</id>
+            <name>likly</name>
+            <roles>
+                <role>Owner</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring.boot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
