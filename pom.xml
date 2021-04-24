@@ -2,9 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>org.ifinal.project.parent</groupId>
     <artifactId>final-projects-parent</artifactId>
-    <version>1.1.4-SNAPSHOT</version>
+    <version>1.2.0-SNAPSHOT</version>
     <name>final-projects-parent</name>
     <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
@@ -12,6 +20,11 @@
     <properties>
         <java.version>1.8</java.version>
         <spring.boot.version>2.4.5</spring.boot.version>
+        <mybatis.version>3.5.6</mybatis.version>
+        <sharding.version>5.0.0-alpha</sharding.version>
+
+        <!--maven plugin-->
+        <maven.jacoco.version>0.8.6</maven.jacoco.version>
     </properties>
 
     <profiles>
@@ -116,16 +129,47 @@
         </license>
     </licenses>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>${spring.boot.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
+                <artifactId>mybatis</artifactId>
+                <groupId>org.mybatis</groupId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <!--分库分表一-->
+            <dependency>
+                <artifactId>shardingsphere-jdbc-core</artifactId>
+                <groupId>org.apache.shardingsphere</groupId>
+                <version>${sharding.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!--单元测试覆盖率-->
+                    <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${maven.jacoco.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
