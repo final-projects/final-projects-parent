@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>org.ifinal.project.parent</groupId>
+    <groupId>org.ifinal.finalframework.parent</groupId>
     <artifactId>final-projects-parent</artifactId>
     <version>1.2.0-SNAPSHOT</version>
     <name>final-projects-parent</name>
@@ -20,9 +20,11 @@
     <properties>
         <java.version>1.8</java.version>
         <spring.boot.version>2.4.5</spring.boot.version>
+        <!--mybatis-->
         <mybatis.version>3.5.6</mybatis.version>
+        <mybatis.spring.boot.version>2.1.4</mybatis.spring.boot.version>
+        <!--sharding-->
         <sharding.version>5.0.0-alpha</sharding.version>
-
         <!--maven plugin-->
         <maven.jacoco.version>0.8.6</maven.jacoco.version>
     </properties>
@@ -134,14 +136,27 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
+            <!--Mybatis-->
+            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
             <dependency>
-                <artifactId>mybatis</artifactId>
                 <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
                 <version>${mybatis.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.version}</version>
             </dependency>
             <!--分库分表一-->
             <dependency>
