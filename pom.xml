@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>org.ifinal.finalframework.parent</groupId>
-    <artifactId>final-projects-parent</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
-    <name>final-projects-parent</name>
+    <groupId>org.ifinalframework.project</groupId>
+    <artifactId>final-project</artifactId>
+    <version>1.2.0-alpha</version>
+    <name>final-project</name>
     <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
 
@@ -64,7 +64,6 @@
             <id>deploy</id>
             <build>
                 <plugins>
-
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -104,12 +103,12 @@
             </distributionManagement>
         </profile>
     </profiles>
-    <url>https://github.com/final-projects/final-projects-parent</url>
+    <url>https://github.com/final-projects/final-project</url>
 
     <scm>
-        <connection>scm:git:git://github.com/final-projects/final-projects-parent.git</connection>
-        <developerConnection>scm:git:ssh://github.com:final-projects/final-projects-parent.git</developerConnection>
-        <url>http://github.com/final-projects/final-projects-parent/tree/main</url>
+        <connection>scm:git:git://github.com/final-projects/final-project.git</connection>
+        <developerConnection>scm:git:ssh://github.com:final-projects/final-project.git</developerConnection>
+        <url>http://github.com/final-projects/final-project/tree/main</url>
     </scm>
 
     <developers>
@@ -169,6 +168,24 @@
 
     <build>
         <plugins>
+            <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+            </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -186,5 +203,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
