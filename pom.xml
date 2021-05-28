@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
+<?xml version="1.0" encoding="UTF-8"?><!--
   ~ Copyright 2020-2021 the original author or authors.
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -41,7 +40,7 @@
         <!--sharding-->
         <sharding.version>5.0.0-alpha</sharding.version>
         <!--maven plugin-->
-        <maven.jacoco.version>0.8.6</maven.jacoco.version>
+        <maven.jacoco.version>0.8.7</maven.jacoco.version>
     </properties>
 
     <profiles>
@@ -198,10 +197,23 @@
 
     <build>
         <plugins>
-
-        <plugin>
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <pluginManagement>
