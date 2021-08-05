@@ -119,19 +119,6 @@
                 </plugins>
             </build>
         </profile>
-        <profile>
-            <id>dmall</id>
-            <distributionManagement>
-                <repository>
-                    <id>dmall.com</id>
-                    <url>http://nexus.dmall.com:8081/nexus/content/repositories/3rd</url>
-                </repository>
-                <snapshotRepository>
-                    <id>dmall.com</id>
-                    <url>http://nexus.dmall.com:8081/nexus/content/repositories/snapshots</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
     </profiles>
     <url>https://github.com/final-projects/final-project</url>
 
