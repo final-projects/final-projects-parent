@@ -39,7 +39,7 @@
         <mybatis.version>3.5.6</mybatis.version>
         <mybatis.spring.boot.version>2.1.4</mybatis.spring.boot.version>
         <!--sharding-->
-        <sharding.version>5.0.0-beta</sharding.version>
+        <sharding.version>5.0.0</sharding.version>
         <!--maven plugin-->
         <maven.jacoco.version>0.8.7</maven.jacoco.version>
     </properties>
