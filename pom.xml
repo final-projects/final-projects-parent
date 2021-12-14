@@ -26,7 +26,7 @@
 
     <groupId>org.ifinalframework.project</groupId>
     <artifactId>final-project</artifactId>
-    <version>1.2.3-SNAPSHOT</version>
+    <version>1.2.3</version>
     <name>final-project</name>
     <description>Final Project with Spring Boot</description>
     <packaging>pom</packaging>
@@ -151,10 +151,12 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <optional>true</optional>
             <scope>test</scope>
         </dependency>
     </dependencies>
