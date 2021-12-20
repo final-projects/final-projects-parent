@@ -125,7 +125,7 @@
     <scm>
         <connection>scm:git:git://github.com/final-projects/final-project.git</connection>
         <developerConnection>scm:git:ssh://github.com:final-projects/final-project.git</developerConnection>
-        <url>http://github.com/final-projects/final-project/tree/main</url>
+        <url>https://github.com/final-projects/final-project/tree/main</url>
     </scm>
 
     <developers>
