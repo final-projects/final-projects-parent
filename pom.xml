@@ -38,10 +38,23 @@
         <!--mybatis-->
         <mybatis.version>3.5.6</mybatis.version>
         <mybatis.spring.boot.version>2.1.4</mybatis.spring.boot.version>
+        <pagehelper.version>5.2.0</pagehelper.version>
+
         <!--sharding-->
         <sharding.version>5.0.0</sharding.version>
         <!--maven plugin-->
         <maven.jacoco.version>0.8.7</maven.jacoco.version>
+
+        <guava.version>30.0-jre</guava.version>
+        <h2.version>1.4.200</h2.version>
+        <cfr.version>0.150</cfr.version>
+
+        <okhttp.version>3.14.7</okhttp.version>
+        <retrofit.version>2.8.1</retrofit.version>
+        <!--CI-->
+        <squareup.javapoet.version>1.13.0</squareup.javapoet.version>
+        <velocity.core.version>2.1</velocity.core.version>
+        <velocity.tool.version>3.0</velocity.tool.version>
     </properties>
 
     <profiles>
@@ -173,12 +186,17 @@
             <dependency>
                 <artifactId>velocity-engine-core</artifactId>
                 <groupId>org.apache.velocity</groupId>
-                <version>2.1</version>
+                <version>${velocity.core.version}</version>
             </dependency>
             <dependency>
                 <artifactId>velocity-tools-generic</artifactId>
                 <groupId>org.apache.velocity.tools</groupId>
-                <version>3.0</version>
+                <version>${velocity.tool.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>javapoet</artifactId>
+                <groupId>com.squareup</groupId>
+                <version>${squareup.javapoet.version}</version>
             </dependency>
             <!--Mybatis-->
             <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
@@ -193,11 +211,52 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring.boot.version}</version>
             </dependency>
+            <dependency>
+                <artifactId>pagehelper</artifactId>
+                <groupId>com.github.pagehelper</groupId>
+                <version>${pagehelper.version}</version>
+            </dependency>
             <!--分库分表一-->
             <dependency>
                 <artifactId>shardingsphere-jdbc-core</artifactId>
                 <groupId>org.apache.shardingsphere</groupId>
                 <version>${sharding.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>retrofit</artifactId>
+                <groupId>com.squareup.retrofit2</groupId>
+                <version>${retrofit.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>okhttp</artifactId>
+                <groupId>com.squareup.okhttp3</groupId>
+                <version>${okhttp.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>converter-jackson</artifactId>
+                <groupId>com.squareup.retrofit2</groupId>
+                <version>${retrofit.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <artifactId>guava</artifactId>
+                <groupId>com.google.guava</groupId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.benf/cfr -->
+            <dependency>
+                <groupId>org.benf</groupId>
+                <artifactId>cfr</artifactId>
+                <version>${cfr.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
