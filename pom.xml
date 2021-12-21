@@ -170,6 +170,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <artifactId>velocity-engine-core</artifactId>
+                <groupId>org.apache.velocity</groupId>
+                <version>2.1</version>
+            </dependency>
+            <dependency>
+                <artifactId>velocity-tools-generic</artifactId>
+                <groupId>org.apache.velocity.tools</groupId>
+                <version>3.0</version>
+            </dependency>
             <!--Mybatis-->
             <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
             <dependency>
