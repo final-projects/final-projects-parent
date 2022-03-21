@@ -47,7 +47,7 @@
 
         <guava.version>30.0-jre</guava.version>
         <h2.version>1.4.200</h2.version>
-        <cfr.version>0.150</cfr.version>
+        <cfr.version>0.152</cfr.version>
         <dom4j.version>2.1.3</dom4j.version>
         <poi.version>5.1.0</poi.version>
         <okhttp.version>3.14.7</okhttp.version>
