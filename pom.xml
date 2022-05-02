@@ -45,6 +45,8 @@
         <!--plugins-->
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <guava.version>30.0-jre</guava.version>
+        <!--spring doc-->
+        <springdoc.version>1.6.8</springdoc.version>
 
         <!--maven plugin-->
         <maven.jacoco.version>0.8.7</maven.jacoco.version>
@@ -284,6 +286,26 @@
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
             </dependency>
+            <!--Spring Doc-->
+            <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-webflux-ui -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-webflux-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-javadoc -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-javadoc</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
