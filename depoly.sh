@@ -15,6 +15,9 @@
 
 mvn clean deploy -Possrh
 
+cd ../final-auto
+mvn clean deploy -Possrh
+
 cd ../final-annotation
 mvn clean deploy -Possrh
 
