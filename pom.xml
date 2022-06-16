@@ -33,6 +33,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <final.version>1.3.3-SNAPSHOT</final.version>
         <!--mybatis-->
         <mybatis.version>3.5.9</mybatis.version>
         <mybatis.spring.boot.version>2.2.2</mybatis.spring.boot.version>
