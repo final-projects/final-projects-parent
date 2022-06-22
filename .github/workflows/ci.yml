@@ -27,8 +27,7 @@ jobs:
               {
                 "id": "ci",
                 "name: "ci",
-                "repositories": 
-                [
+                "repositories": [
                   {
                     "id": "ossrh-releases",
                     "name": "ossrh releases",
