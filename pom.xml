@@ -150,6 +150,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--Velocity-->
             <dependency>
                 <artifactId>velocity-engine-core</artifactId>
                 <groupId>org.apache.velocity</groupId>
