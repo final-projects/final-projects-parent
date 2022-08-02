@@ -41,7 +41,7 @@
         <druid.spring.boot.version>1.2.8</druid.spring.boot.version>
 
         <!--sharding-->
-        <sharding.version>5.1.0</sharding.version>
+        <sharding.version>5.1.2</sharding.version>
 
         <!--plugins-->
         <mapstruct.version>1.4.2.Final</mapstruct.version>
