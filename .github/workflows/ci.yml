@@ -28,8 +28,8 @@ jobs:
                 "id": "ci",
                 "name": "ci",
                 "properties": {
-                  "altSnapshotDeploymentRepository": "${ALT_SNAPSHOT_DEPLOYMENT_REPOSITORY}",
-                  "altReleaseDeploymentRepository": "${ALT_RELEASE_DEPLOYMENT_REPOSITORY}"
+                  "altSnapshotDeploymentRepository": "${{ secrets.ALT_SNAPSHOT_DEPLOYMENT_REPOSITORY }}",
+                  "altReleaseDeploymentRepository": "${{ secrets.ALT_RELEASE_DEPLOYMENT_REPOSITORY }}"
                 }
               }
             ]
@@ -37,8 +37,8 @@ jobs:
             [
               {
                 "id": "ossrh",
-                "username": "${env.MVN_SERVER_USER}",
-                "password": "${env.MVN_SERVER_PASSWORD}"
+                "username": "${{ secrets.MVN_SERVER_USER }}",
+                "password": "${{ secrets.MVN_SERVER_PASSWORD }}"
               }
             ]
           repositories: >
