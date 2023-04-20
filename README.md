@@ -6,7 +6,7 @@ Final Parent Project
 
 |       组件       |   版本    |                                                    Maven                                                     |
 |:--------------:|:-------:|:------------------------------------------------------------------------------------------------------------:|
-|  spring-boot   |  2.7.9  | ![Maven Central](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot-starter-parent) |
+|  spring-boot   |  2.7.10  | ![Maven Central](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot-starter-parent) |
 |    mybatis     | 3.5.12  |                 ![Maven Central](https://img.shields.io/maven-central/v/org.mybatis/mybatis)                 |
 | mybatis-spring |  2.3.0  | ![Maven Central](https://img.shields.io/maven-central/v/org.mybatis.spring.boot/mybatis-spring-boot-starter) |
 |   pagehelper   |  5.3.2  |          ![Maven Central](https://img.shields.io/maven-central/v/com.github.pagehelper/pagehelper)           |
