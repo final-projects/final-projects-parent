@@ -22,7 +22,15 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           GPG_PUBLIC_KEY: ${{ secrets.GPG_PUBLIC_KEY }}
+      - name: Get GPG Key ID
+        id: gpg-key-id
+        run: |
+          GPG_KEY_ID=$(gpg --list-keys --keyid-format long | grep -Eo '([0-9A-F]{16,})')
+          echo "::set-output name=gpgKeyId::$GPG_KEY_ID"
 
+      - name: Display GPG Key ID
+        run: |
+          echo "GPG Key ID: ${{ steps.gpg-key-id.outputs.gpgKeyId }}"
       - name: Set up JDK 17
         uses: actions/setup-java@v1
         with:
@@ -38,6 +46,8 @@ jobs:
                 "properties": {
                   "altSnapshotDeploymentRepository": "${{ secrets.ALT_SNAPSHOT_DEPLOYMENT_REPOSITORY }}",
                   "altReleaseDeploymentRepository": "${{ secrets.ALT_RELEASE_DEPLOYMENT_REPOSITORY }}"
+                  "gpg.keyname": "${{ steps.gpg-key-id.outputs.gpgKeyId }}"
+                  "gpg.passphrase": "${{ secrets.GPG_PASSPHRASE }}"
                 }
               }
             ]
@@ -79,5 +89,6 @@ jobs:
       - name: Build with Maven
         run: mvn -B package -Pci,ossrh --file pom.xml
       - name: Deploy with Maven
-        run: mvn -B deploy -Pci,ossrh --file pom.xml -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }}
-
+        run: mvn -B deploy -Pci,ossrh --file pom.xml
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
