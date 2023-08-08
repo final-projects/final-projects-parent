@@ -78,6 +78,10 @@ jobs:
         run : cat /home/runner/.m2/settings.xml
       - name: Build with Maven
         run: mvn -B package -Pci,ossrh --file pom.xml
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Deploy with Maven
         run: mvn -B deploy -Pci,ossrh --file pom.xml
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
