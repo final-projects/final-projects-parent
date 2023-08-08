@@ -45,8 +45,8 @@ jobs:
                 "id": "ci",
                 "properties": {
                   "altSnapshotDeploymentRepository": "${{ secrets.ALT_SNAPSHOT_DEPLOYMENT_REPOSITORY }}",
-                  "altReleaseDeploymentRepository": "${{ secrets.ALT_RELEASE_DEPLOYMENT_REPOSITORY }}"
-                  "gpg.keyname": "${{ steps.gpg-key-id.outputs.gpgKeyId }}"
+                  "altReleaseDeploymentRepository": "${{ secrets.ALT_RELEASE_DEPLOYMENT_REPOSITORY }}",
+                  "gpg.keyname": "${{ steps.gpg-key-id.outputs.gpgKeyId }}",
                   "gpg.passphrase": "${{ secrets.GPG_PASSPHRASE }}"
                 }
               }
