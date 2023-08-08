@@ -89,15 +89,15 @@ jobs:
         run : |
 
           # Replace the text using sed
-          command="s/<final.version>.*<\/final.version>/<final.version>$GITHUB_REF<\/final.version>/g"
+          command="s/<final.version>.*<\/final.version>/<final.version>$GITHUB_REF_NAME<\/final.version>/g"
           
           echo "command=${command}"
           
-          sed -i command "pom.xml"
+          sed -i "${command}" "pom.xml"
           
           cat pom.xml
           
-          mvn versions:set -DnewVersion=$GITHUB_REF
+          mvn versions:set -DnewVersion=$GITHUB_REF_NAME
 
       - name: Deploy with Maven
         run: mvn -B deploy -Pci,ossrh --file pom.xml
