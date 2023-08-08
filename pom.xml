@@ -26,7 +26,7 @@
 
     <groupId>org.ifinalframework.project</groupId>
     <artifactId>final-dependencies</artifactId>
-    <version>1.5.3-SNAPSHOT</version>
+    <version>1.5.3-alpha</version>
     <name>final-project</name>
     <description>Final Project with Spring Boot</description>
     <packaging>pom</packaging>
