@@ -115,12 +115,12 @@
             </build>
         </profile>
     </profiles>
-    <url>https://github.com/final-projects/final-project</url>
+    <url>https://github.com/final-projects/final-dependencies</url>
 
     <scm>
-        <connection>scm:git:git://github.com/final-projects/final-project.git</connection>
-        <developerConnection>scm:git:ssh://github.com:final-projects/final-project.git</developerConnection>
-        <url>https://github.com/final-projects/final-project/tree/main</url>
+        <connection>scm:git:git://github.com/final-projects/final-dependencies.git</connection>
+        <developerConnection>scm:git:ssh://github.com:final-projects/final-dependencies.git</developerConnection>
+        <url>https://github.com/final-projects/final-dependencies/tree/main</url>
     </scm>
 
     <developers>
