@@ -17,7 +17,7 @@ jobs:
       - name: Import GPG keys
         run: |
           echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 -d | gpg --import
-          echo "${{ secrets.GPG_PUBLIC_KEY }}" | base64 -d | gpg --import
+          echo "${{ secrets.GPG_OWNERTRUST }}" | base64 -d | gpg --import-ownertrust
 
       - name: Set up JDK 17
         uses: actions/setup-java@v1
