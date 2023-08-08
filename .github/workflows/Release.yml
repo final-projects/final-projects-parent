@@ -89,7 +89,11 @@ jobs:
         run : |
 
           # Replace the text using sed
-          sed -i "s/<final.version>.*<\/final.version>/<final.version>$GITHUB_REF<\/final.version>/g" "pom.xml"
+          command="s/<final.version>.*<\/final.version>/<final.version>$GITHUB_REF<\/final.version>/g"
+          
+          echo "command=${command}"
+          
+          sed -i command "pom.xml"
           
           cat pom.xml
           
