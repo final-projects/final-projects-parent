@@ -1,5 +1,15 @@
 # final-projects-parent
 
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/final-projects/final-dependencies/CI)](https://github.com/final-projectes/final-dependencies/actions?query=workflow%3ACI)
+[![GitHub](https://img.shields.io/github/license/final-projects/final-dependencies)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![Maven Central](https://img.shields.io/maven-central/v/org.ifinalframework.project/final-dependencies?label=maven&color=success)](https://mvnrepository.com/search?q=org.ifinalframework)
+![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/org.ifinalframework.project/final-dependencies?server=https://s01.oss.sonatype.org)
+![Sonatype Nexus (Snapshot)](https://img.shields.io/nexus/s/org.ifinalframework.project/final-dependencies?server=https://s01.oss.sonatype.org)
+![GitHub Repo stars](https://img.shields.io/github/stars/final-projects/final-dependencies)
+![GitHub top language](https://img.shields.io/github/languages/top/final-projects/final-dependencies)
+[![GitHub language count](https://img.shields.io/github/languages/count/final-projects/final-dependencies)](https://github.com/likly/final-framework)
+
+
 Final Parent Project
 
 ## 依赖
