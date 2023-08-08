@@ -86,8 +86,6 @@ jobs:
             ]
       - name: Cat Setting.xml
         run : cat /home/runner/.m2/settings.xml
-      - name: Build with Maven
-        run: mvn -B package -Pci,ossrh --file pom.xml
       - name: Deploy with Maven
         run: mvn -B deploy -Pci,ossrh --file pom.xml
         env:
