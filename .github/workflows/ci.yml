@@ -81,7 +81,7 @@ jobs:
         env:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Deploy with Maven
-        run: mvn -B deploy -Pci,ossrh --file pom.xml
+        run: mvn -B gpg --batch --passphrase "$GPG_PASSPHRASE" deploy -Pci,ossrh --file pom.xml
         env:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
