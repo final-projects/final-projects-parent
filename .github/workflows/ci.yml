@@ -16,15 +16,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set up GPG
         run: |
-          echo "$GPG_SECRET_KEYS"
-          echo "GPG_OWNERTRUST"
-          echo "$GPG_SECRET_KEYS" | base64 --decode > private-key.gpg
-          echo "GPG_OWNERTRUST" | base64 --decode > ownertrust.txt
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode > private-key.gpg
+          echo "${{ secrets.GPG_OWNERTRUST }}" | base64 --decode > ownertrust.txt
           gpg --import private-key.gpg
           gpg --import-ownertrust ownertrust.txt
-        env:
-          GPG_SECRET_KEYS: ${{ secrets.GPG_PRIVATE_KEY }}
-          GPG_OWNERTRUST: ${{ secrets.GPG_OWNERTRUST }}
 
       - name: Set up JDK 17
         uses: actions/setup-java@v1
