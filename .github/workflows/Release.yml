@@ -87,18 +87,14 @@ jobs:
         run : cat /home/runner/.m2/settings.xml
       - name: 设置版本
         run : |
-          mvn versions:set -DnewVersion=$GITHUB_REF
-          # Specify the file path
-          file_path="pom.xml"
-
-          # Text to search for and replace
-          search_text="<final.version>.*<\/final.version>"
-          replace_text="<final.version>$GITHUB_REF<\/final.version>"
 
           # Replace the text using sed
-          sed -i "s/${search_text}/${replace_text}/g" "$file_path"
+          sed -i "s/<final.version>.*<\/final.version>/<final.version>$GITHUB_REF<\/final.version>/g" "pom.xml"
           
-          cat file_path
+          cat pom.xml
+          
+          mvn versions:set -DnewVersion=$GITHUB_REF
+
       - name: Deploy with Maven
         run: mvn -B deploy -Pci,ossrh --file pom.xml
         env:
