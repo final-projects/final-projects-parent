@@ -17,8 +17,9 @@ jobs:
       - name: Set up GPG
         run: |
           echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode > private-key.gpg
-          echo "${{ secrets.GPG_OWNERTRUST }}" | base64 --decode > ownertrust.txt
+          echo "${{ secrets.GPG_OWNERTRUST }}" > ownertrust.txt
           gpg --import private-key.gpg
+          cat ownertrust.txt
           gpg --import-ownertrust ownertrust.txt
 
       - name: Set up JDK 17
