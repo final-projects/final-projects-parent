@@ -13,26 +13,39 @@
 # limitations under the License.
 #
 
-mvn versions:set -DnewVersion=1.4.1-SNAPSHOT
+version=1.5.3-SNAPSHOT
+
+mvn versions:set -DnewVersion=$version
+sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$version<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-auto
-mvn versions:set -DnewVersion=1.4.1-SNAPSHOT
+mvn versions:set -DnewVersion=$version
+sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$version<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-annotation
-mvn versions:set -DnewVersion=1.4.1-SNAPSHOT
+mvn versions:set -DnewVersion=$version
+sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$version<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-framework
-mvn versions:set -DnewVersion=1.4.1-SNAPSHOT
+mvn versions:set -DnewVersion=$version
+sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$version<\/final.version>/g" "pom.xml"
+mvn versions:commit
+
+cd ../final-security
+mvn versions:set -DnewVersion=$version
+sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$version<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-data
-mvn versions:set -DnewVersion=1.4.1-SNAPSHOT
+mvn versions:set -DnewVersion=$version
+sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$version<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-boot
-mvn versions:set -DnewVersion=1.4.1-SNAPSHOT
+mvn versions:set -DnewVersion=$version
+sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$version<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
