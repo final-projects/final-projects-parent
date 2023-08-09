@@ -24,6 +24,9 @@ mvn clean install -Possrh -Dmaven.test.skip=true
 cd ../final-framework
 mvn clean install -Possrh -Dmaven.test.skip=true
 
+cd ../final-security
+mvn clean install -Possrh -Dmaven.test.skip=true
+
 cd ../final-data
 mvn clean install -Possrh -Dmaven.test.skip=true
 
