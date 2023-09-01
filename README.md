@@ -1,6 +1,6 @@
 # final-projects-parent
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/final-projects/final-dependencies/CI)](https://github.com/final-projectes/final-dependencies/actions?query=workflow%3ACI)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/final-projects/final-dependencies/ci)](https://github.com/final-projectes/final-dependencies/actions?query=workflow%3Aci)
 [![GitHub](https://img.shields.io/github/license/final-projects/final-dependencies)](http://www.apache.org/licenses/LICENSE-2.0.html)
 [![Maven Central](https://img.shields.io/maven-central/v/org.ifinalframework.project/final-dependencies?label=maven&color=success)](https://mvnrepository.com/search?q=org.ifinalframework)
 ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/org.ifinalframework.project/final-dependencies?server=https://s01.oss.sonatype.org)
