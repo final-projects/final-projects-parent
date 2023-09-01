@@ -13,44 +13,44 @@
 # limitations under the License.
 #
 
-newVersion=1.5.4
+newVersion=1.5.5-SNAPSHOT
 
 mvn versions:set -DnewVersion=$newVersion
 sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$newVersion<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-auto
-mvn versions:update-parent -Possrh
+#mvn versions:use-lastest-versions -Possrh
 mvn versions:set -DnewVersion=$newVersion
 sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$newVersion<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-annotation
-mvn versions:update-parent -Possrh
+#mvn versions:use-lastest-versions -Possrh
 mvn versions:set -DnewVersion=$newVersion
 sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$newVersion<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-framework
-mvn versions:update-parent -Possrh
+#mvn versions:use-lastest-versions -Possrh
 mvn versions:set -DnewVersion=$newVersion
 sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$newVersion<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-security
-mvn versions:update-parent -Possrh
+#mvn versions:use-lastest-versions -Possrh
 mvn versions:set -DnewVersion=$newVersion
 sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$newVersion<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-data
-mvn versions:update-parent -Possrh
+#mvn versions:use-lastest-versions -Possrh
 mvn versions:set -DnewVersion=$newVersion
 sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$newVersion<\/final.version>/g" "pom.xml"
 mvn versions:commit
 
 cd ../final-boot
-mvn versions:update-parent -Possrh
+#mvn versions:use-lastest-versions -Possrh
 mvn versions:set -DnewVersion=$newVersion
 sed -i "" "s/<final.version>.*<\/final.version>/<final.version>$newVersion<\/final.version>/g" "pom.xml"
 mvn versions:commit
