@@ -26,14 +26,14 @@
 
     <groupId>org.ifinalframework.project</groupId>
     <artifactId>final-dependencies</artifactId>
-    <version>1.5.4-SNAPSHOT</version>
+    <version>1.5.4</version>
     <name>final-dependencies</name>
     <description>Final Dependencies</description>
     <packaging>pom</packaging>
 
     <properties>
         <java.version>17</java.version>
-        <final.version>1.5.4-SNAPSHOT</final.version>
+        <final.version>1.5.4</final.version>
         <!--mybatis-->
         <mybatis.version>3.5.13</mybatis.version>
         <mybatis.spring.boot.version>3.0.2</mybatis.spring.boot.version>
