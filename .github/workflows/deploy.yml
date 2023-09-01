@@ -102,7 +102,7 @@ jobs:
           git config user.email "actions@github.com"
           git commit -am "Release ${{ steps.extract-version.outputs.version }}"
       - name: 推送到 Release 分支
-        run: git push --set-upstream origin release
+        run: git push --set-upstream origin release --force
       - name: Create Tag
         run: git tag ${{ steps.extract-version.outputs.version }}
       - name: Push Tag
