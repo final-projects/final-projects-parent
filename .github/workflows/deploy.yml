@@ -90,18 +90,18 @@ jobs:
             ]
       - name: Cat Setting.xml
         run: cat /home/runner/.m2/settings.xml
-      - name: 更改版本
-        run: mvn versions:set -DnewVersion=${{ steps.extract-version.outputs.version }} -Pci --file pom.xml
-      - name: Commit Version Bump
+      - name: 创建 Release 分支
+        run: git checkout -b release
+      - name: 更新版本
+        run: |
+          mvn versions:set -DnewVersion=${{ steps.extract-version.outputs.version }} -Pci --file pom.xml
+          mvn versions:set-property -Dproperty=final.version -DnewVersion=${{ steps.extract-version.outputs.version }}
+      - name: 提交修改
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git commit -am "Release ${{ steps.version.outputs.new_version }}"
-          git push
-          
-      - name: Create Release Branch
-        run: git checkout -b release
-      - name: Push to Release Branch
+          git commit -am "Release ${{ steps.extract-version.outputs.version }}"
+      - name: 推送到 Release 分支
         run: git push --set-upstream origin release
       - name: Create Tag
         run: git tag ${{ steps.extract-version.outputs.version }}
