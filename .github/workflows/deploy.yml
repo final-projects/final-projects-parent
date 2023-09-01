@@ -12,6 +12,8 @@ jobs:
     if: startsWith(github.event.head_commit.message, 'deploy')
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: 提取版本号
         id: extract-version
         run: |
