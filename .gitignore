@@ -34,3 +34,4 @@ build/
 .vscode/
 
 **/pom.xml.versionsBackup
+**/.DS_Store
